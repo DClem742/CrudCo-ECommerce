@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function HomePage() {
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold text-center mb-8 text-white">Welcome to Our Shop</h1>
+            <h1 className="text-4xl font-bold text-center mb-8 text-white">Welcome to Crud Co</h1>
             
             <div className="max-w-6xl mx-auto">
                 <section className="bg-gray-900 rounded-lg p-12 text-center mb-12">
