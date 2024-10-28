@@ -1,7 +1,8 @@
 import { z } from "zod";
 import supabase from "../supabase";
+import { useAuth } from "../AuthContext";
 
-const registrationSchema = z.object({
+const loginSchema = z.object({
     username: z.string()
         .email("Please enter a valid email address")
         .min(1, "Email is required")
@@ -12,7 +13,7 @@ const registrationSchema = z.object({
         .regex(/[0-9]/, "Password must contain at least one number")
 });
 
-const Registration = () => {
+const Login = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = {
@@ -20,9 +21,9 @@ const Registration = () => {
             password: event.target.password.value
         };
 
-        const result = await registrationSchema.safeParseAsync(formData);
+        const result = await loginSchema.safeParseAsync(formData);
         if (result.success) {
-            const { data, error } = await supabase.auth.signUp({
+            const { data, error } = await supabase.auth.signInWithPassword({
                 email: result.data.username,
                 password: result.data.password,
                 options: {
@@ -32,10 +33,10 @@ const Registration = () => {
                 }
             });
             if (data) {
-                console.log('Registration successful:', data);
+                console.log('Login successful:', data);
             }
             if (error) {
-                console.log('Registration error:', error);
+                console.log('Login error:', error);
             }
         } else {
             console.log('Validation errors:', result.error);
@@ -47,7 +48,7 @@ const Registration = () => {
     return (
         <div className="container mx-auto mt-8 p-4">
             <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-gray-800 p-6 rounded-lg">
-                <h2 className="text-2xl mb-4">Register</h2>
+                <h2 className="text-2xl mb-4">Login</h2>
                 <label className="block mb-4">
                     Your Email Address
                     <input 
@@ -70,11 +71,11 @@ const Registration = () => {
                     type="submit"
                     className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
                 >
-                    Register
+                    Login
                 </button>
             </form>
         </div>
     );
 };
 
-export default Registration;
+export default Login;

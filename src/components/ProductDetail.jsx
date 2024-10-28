@@ -13,6 +13,7 @@ const ProductDetail = ({ addToCart }) => {
 
     if (!product) return <div>Loading...</div>;
 
+
     return (
         <div className="product-detail">
             <img src={product.image} alt={product.title} />

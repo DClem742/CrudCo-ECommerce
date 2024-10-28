@@ -4,9 +4,8 @@ function HomePage() {
     return (
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-4xl font-bold text-center mb-8 text-white">Welcome to Crud Co</h1>
-            
             <div className="max-w-6xl mx-auto">
-                <section className="bg-gray-900 rounded-lg p-12 text-center mb-12">
+                <section className="bg-green-700 rounded-lg p-12 text-center mb-12">
                     <h2 className="text-3xl font-semibold mb-4 text-white">Find Everything You Need</h2>
                     <p className="text-gray-300 mb-6">Browse our wide selection of products across multiple categories</p>
                     <Link 
