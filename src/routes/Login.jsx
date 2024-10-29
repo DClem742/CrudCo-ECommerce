@@ -1,16 +1,14 @@
-import { Form, useActionData } from "react-router-dom";
-import { useEffect } from "react";
+import { Form, useActionData, Navigate } from "react-router-dom";
 import { z } from "zod";
-import styles from "./Login.module.css";
 import supabase from "../supabase";
-import { useAuth } from "../AuthContext";
+import styles from "./Login.module.css";
 
 const LoginSchema = z.object({
   email: z
     .string()
-    .email("Invalid Email")
+    .email("invalid-email")
     .transform((email) => email.toLowerCase()),
-  password: z.string().min(8, "Password Too Short"),
+  password: z.string().min(8, "password-to-short"),
 });
 
 export const action = async ({ request }) => {
@@ -26,79 +24,52 @@ export const action = async ({ request }) => {
   }
 
   const { email, password } = result.data;
-  console.log("EMAIL AND PASSWORD: ", email, password);
-  console.log("TO BE CONTINUED... ");
-
   const { data, error } = await supabase.auth.signInWithPassword({
     email,
     password,
   });
 
-  console.log("DATA AND ERROR: ", data, error);
+  if (error) {
+    console.error("ERROR: ", error);
+  }
 
-  return data;
+  return { data, error };
 };
 
 const Login = () => {
-  const data = useActionData();
-  const { setUser, setSession } = useAuth();
+  const loginData = useActionData();
 
-  console.log("DATA: ", data);
-
-  useEffect(() => {
-    if (data?.user && data?.session) {
-      setUser(data.user)
-      setSession(data.session)
-    }
-  }, [data, setUser, setSession])
+  if (loginData?.data && !loginData?.error) {
+    return <Navigate to="/" replace />;
+  }
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Welcome Back! Please Sign In</h1>
-      
-      <div className={styles.formContainer}>
-        <Form
-          action="/login"
-          method="post"
-          className={styles.form}
-        >
-          <div className={styles.formGroup}>
-            <label className={styles.label}>
-              <span className={styles.labelText}>Your Email Address</span>
-              <input
-                className={styles.input}
-                name="username"
-                type="email"
-                placeholder="you@supercoolhuman.com"
-                autoComplete="email"
-                required
-              />
-            </label>
-          </div>
-
-          <div className={styles.formGroup}>
-            <label className={styles.label}>
-              <span className={styles.labelText}>Password</span>
-              <input
-                className={styles.input}
-                name="password"
-                type="password"
-                placeholder="Enter password here"
-                autoComplete="new-password"
-                required
-              />
-            </label>
-          </div>
-
-          <button
-            type="submit"
-            className={styles.button}
-          >
-            Login
-          </button>
-        </Form>
-      </div>
-    </div>
+    <>
+      <h2>Login for cool stuff</h2>
+      <Form action="/login" method="POST">
+        <label>
+          Your Email Address
+          <input
+            name="username"
+            type="email"
+            placeholder="you@supercoolhuman.com"
+            autoComplete="email"
+            required
+          />
+        </label>
+        <label>
+          Password
+          <input
+            name="password"
+            type="password"
+            placeholder="s0m3HARD2GUESS!Passw0rd!"
+            autoComplete="password"
+            required
+          />
+        </label>
+        <button type="submit">Login</button>
+      </Form>
+    </>
   );
 };
 
