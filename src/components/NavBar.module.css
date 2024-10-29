@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #8646e5;
+  background-color: #22dd41;
   width: 100vw; /* Full viewport width */
   padding: 1rem 0;
   margin: 0;
@@ -13,10 +13,27 @@
   width: 100%;
   padding: 0 2rem;
   display: flex;
-  justify-content: space-between; /* This spreads content to both ends */
+  justify-content: space-between;
   align-items: center;
   margin: 0;
   border: none;
+}
+
+.navLink:hover {
+  opacity: 1;
+  color: #ff00ff;  /* Vibrant magenta */
+}
+
+.socialButton:hover {
+  color: #ff00ff;  /* Vibrant magenta */
+}
+.navLink:hover {
+  opacity: 1;
+  color: #ff00ff;
+}
+
+.socialButton:hover {
+  color: #ff00ff;
 }
 
 .leftSection {
@@ -52,10 +69,13 @@
   opacity: 0.9;
   transition: opacity 0.2s ease;
 }
-
 .navLink:hover {
   opacity: 1;
-  color: rgb(34, 221, 65);
+  color: #ff00ff;  /* Vibrant magenta */
+}
+
+.socialButton:hover {
+  color: #ff00ff;  /* Vibrant magenta */
 }
 
 .socialLinks {

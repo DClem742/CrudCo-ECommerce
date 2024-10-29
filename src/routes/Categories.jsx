@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom';
 import { useLoaderData } from 'react-router-dom';
 import styles from './Categories.module.css';
 
+// Update the categories array to match the backend models
 export const categories = [
-  { name: "Electronics", emoji: "🔌" },
-  { name: "Jewelery", emoji: "💍" },
-  { name: "Men's Clothing", emoji: "👔" },
-  { name: "Women's Clothing", emoji: "👗" }
+  { name: "Shirts", emoji: "👕" },
+  { name: "Music", emoji: "💿" },
+  { name: "Hats", emoji: "🧢" },
+  { name: "Hoodies", emoji: "🧥" },
+  { name: "Pins", emoji: "📌" }
 ];
 
 export async function loader() {
