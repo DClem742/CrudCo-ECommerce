@@ -6,55 +6,64 @@
     font-weight: 600;
     font-size: 2rem;
 }
-
-.productList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+   .productList {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
     gap: 2rem;
-    padding: 1rem;
+    padding: 2rem;
+    list-style: none;
+    justify-content: center;
 }
 
 .productCard {
-    background-color: #242938;
-    border: 1px solid #2f3446;
+    background: white;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
     padding: 1rem;
-    transition: transform 0.2s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
 }
-
 .productCard:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(134, 70, 229, 0.2);
-    border-color: #8646e5;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+   .productCard img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    padding: 10px;
+}
+.productCard h3 {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: #333;
 }
 
 .productLink {
-    text-decoration: none;
-    color: inherit;
-    font-family: 'Montserrat', sans-serif;
+      text-decoration: none;
+      color: inherit;
+      font-family: 'Montserrat', sans-serif;
 }
 
 .productTitle {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-    color: #ffffff;
-    line-height: 1.2em;
-    max-height: 2.4em;
-    overflow: hidden;
-    position: relative;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #2f3446;
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      color: #ffffff;
+      line-height: 1.2em;
+      max-height: 2.4em;
+      overflow: hidden;
+      position: relative;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #2f3446;
 }
 
 .productImage {
-    width: 100%;
-    height: 200px;
+      width: 100%;
+      height: 200px;
     object-fit: contain;
     margin: 1rem 0;
     padding: 1rem;
@@ -172,4 +181,40 @@
 
 .addToCartButton:hover {
   background-color: #ff00ff;
+}
+
+.productCard {
+  background: #000000;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  padding: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.productCard h3 {
+  color: #ffffff;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.description {
+  font-size: 0.9rem;
+
+  color: #cccccc;
+  margin: 0.5rem 0;
+}
+
+.price {
+  font-weight: bold;
+
+  color: #66d9ef;
+  font-size: 1.1rem;
+}
+
+.sizes {
+
+  color: #a8a8a8;
+  font-size: 0.9rem;
 }

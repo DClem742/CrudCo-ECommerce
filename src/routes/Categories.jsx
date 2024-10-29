@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, Link } from 'react-router-dom';
 import styles from './Categories.module.css';
 
 export const loader = async () => {
@@ -9,13 +9,14 @@ export const loader = async () => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    console.log("Categories data:", data); // This will show the returned data
+    console.log("Categories data:", data);
     return data;
   } catch (error) {
     console.error('Categories loader error:', error);
     throw new Error(`Failed to load categories: ${error.message}`);
   }
 };
+
 const Categories = () => {
   const categories = useLoaderData();
 
@@ -24,11 +25,17 @@ const Categories = () => {
       <h2>Categories</h2>
       {categories.map((category) => (
         <ul key={category.id}>
-          <li>{category.name}</li>
+          <li>
+            <Link to={`/categories/${category.id}`}>
+              <button className={styles.categoryButton}>
+                {category.name}
+              </button>
+            </Link>
+          </li>
         </ul>
       ))}
     </>
   );
 };
 
-export default Categories;    
+export default Categories;

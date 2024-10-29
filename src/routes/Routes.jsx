@@ -7,6 +7,7 @@ import ErrorPage from "../pages/Error";
 import SingleProduct, { loader as singleProductLoader } from "./SingleProduct";
 import Registration, { action as registrationAction } from "./Registration";
 import Login, { action as loginAction } from "./Login";
+import CategoryProducts, { loader as categoryProductsLoader } from "./CategoryProducts";
 
 const Routes = () => {
   const router = createBrowserRouter([
@@ -34,6 +35,11 @@ const Routes = () => {
           loader: categoriesLoader,
         },
         {
+          path: "/categories/:id",
+          element: <CategoryProducts />,
+          loader: categoryProductsLoader,
+        },
+        {
           path: "/register",
           element: <Registration />,
           action: registrationAction,
@@ -49,5 +55,4 @@ const Routes = () => {
 
   return <RouterProvider router={router} />;
 };
-
 export default Routes;
