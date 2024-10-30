@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useLoaderData, Link } from "react-router-dom";
 import styles from "./Products.module.css";
+import AddToCartBtn from "../components/AddToCartBtn";
 
 export const loader = async () => {
   const apiUrl = `${import.meta.env.VITE_API_URL}/products`;
@@ -30,6 +31,7 @@ const Products = () => {
               <h3>{product.title}</h3>
               <img src={product.image} alt={product.title} />
             </Link>
+            <AddToCartBtn product = {product} />
           </li>
         ))}
       </ul>

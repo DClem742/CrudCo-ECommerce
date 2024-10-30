@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 import { useCart } from "../CartContext";
 import ShoppingBag from "./ShoppingCart";
+import CartNotifier from "./CartNotifier";
 
 import styles from "./Nav.module.css";
 
