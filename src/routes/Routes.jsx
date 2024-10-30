@@ -8,6 +8,7 @@ import SingleProduct, { loader as singleProductLoader } from "./SingleProduct";
 import Registration, { action as registrationAction } from "./Registration";
 import Login, { action as loginAction } from "./Login";
 import CategoryProducts, { loader as categoryProductsLoader } from "./CategoryProducts";
+import CartPage from "../pages/CartPage";
 
 const Routes = () => {
   const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const Routes = () => {
           element: <Login />,
           action: loginAction,
         },
+        {
+          path: "/cart",
+          element: <CartPage />,
+        }
       ],
     },
   ]);

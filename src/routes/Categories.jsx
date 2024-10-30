@@ -16,26 +16,22 @@ export const loader = async () => {
     throw new Error(`Failed to load categories: ${error.message}`);
   }
 };
-
 const Categories = () => {
   const categories = useLoaderData();
 
   return (
     <>
       <h2>Categories</h2>
-      {categories.map((category) => (
-        <ul key={category.id}>
-          <li>
-            <Link to={`/categories/${category.id}`}>
-              <button className={styles.categoryButton}>
-                {category.name}
-              </button>
-            </Link>
-          </li>
-        </ul>
-      ))}
+      <div className={styles.categoryContainer}>
+        {categories.map((category) => (
+          <Link key={category.id} to={`/categories/${category.id}`}>
+            <button className={styles.categoryButton}>
+              {category.name}
+            </button>
+          </Link>
+        ))}
+      </div>
     </>
   );
 };
-
 export default Categories;

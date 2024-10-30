@@ -1,5 +1,6 @@
 import { useLoaderData, Link } from "react-router-dom";
 import styles from "./Products.module.css";
+import AddToCartBtn from "../components/AddToCartBtn";
 
 export const loader = async ({ params }) => {
   // First fetch the category name
@@ -31,6 +32,7 @@ const CategoryProducts = () => {
               <p className={styles.price}>${product.price}</p>
               <p className={styles.sizes}>Sizes: {product.sizes}</p>
             </Link>
+            <AddToCartBtn product={product} />
           </li>
         ))}
       </ul>

@@ -16,8 +16,13 @@
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevents horizontal scrolling */
-  background-color: #1a1b2e;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 * {

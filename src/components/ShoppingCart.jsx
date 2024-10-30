@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom';
+
 const ShoppingBag = () => (
-    <figure style={{ width: 32, height: 32, margin: 0, padding: 0 }}>
+  <Link to="/cart">
+    <figure style={{ width: 32, height: 32, margin: 0, padding: 0, cursor: 'pointer' }}>
       <svg
         fill="#fff"
         height="800px"
@@ -21,6 +24,7 @@ const ShoppingBag = () => (
         </g>
       </svg>
     </figure>
-  );
-  
-  export default ShoppingBag;
+  </Link>
+);
+
+export default ShoppingBag;

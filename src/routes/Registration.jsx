@@ -42,33 +42,40 @@ const Registration = () => {
   }
 
   return (
-    <>
-      <h2>Register for cool stuff</h2>
-      <Form action="/register" method="POST">
-        <label>
-          Your Email Address
-          <input
-            name="username"
-            type="email"
-            placeholder="you@supercoolhuman.com"
-            autoComplete="email"
-            required
-          />
-        </label>
-        <label>
-          Password
-          <input
-            name="password"
-            type="password"
-            placeholder="s0m3HARD2GUESS!Passw0rd!"
-            autoComplete="password"
-            required
-          />
-        </label>
-        <button type="submit">Register</button>
-      </Form>
-    </>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Register for cool stuff</h2>
+      <div className={styles.formContainer}>
+        <Form action="/register" method="POST">
+          <div className={styles.formGroup}>
+            <label className={styles.label}>
+              Your Email Address
+              <input
+                className={styles.input}
+                name="username"
+                type="email"
+                placeholder="you@supercoolhuman.com"
+                autoComplete="email"
+                required
+              />
+            </label>
+          </div>
+          <div className={styles.formGroup}>
+            <label className={styles.label}>
+              Password
+              <input
+                className={styles.input}
+                name="password"
+                type="password"
+                placeholder="s0m3HARD2GUESS!Passw0rd!"
+                autoComplete="password"
+                required
+              />
+            </label>
+          </div>
+          <button className={styles.button} type="submit">Register</button>
+        </Form>
+      </div>
+    </div>
   );
 };
-
 export default Registration;

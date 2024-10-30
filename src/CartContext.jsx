@@ -7,7 +7,7 @@ const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product) => {
-    const existingItem = cartItems.find((item) => item.product === product.id);
+    const existingItem = cartItems.find((item) => item.product.id === product.id);
     
     setCartItems(() => {
       if (existingItem) {

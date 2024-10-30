@@ -1,4 +1,5 @@
 import { useCart } from "../CartContext";
+import styles from "../routes/Products.module.css";
 
 const AddToCartBtn = ({ product }) => {
     const { addToCart } = useCart();
@@ -8,7 +9,11 @@ const AddToCartBtn = ({ product }) => {
     };
 
     return (
-    <button type= "button" onClick={handleClick}>
+    <button 
+        type="button" 
+        className={styles.addToCartBtn} 
+        onClick={handleClick}
+    >
         Add to Cart 
     </button>
     );

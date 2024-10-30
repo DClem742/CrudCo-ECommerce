@@ -1,4 +1,9 @@
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -15,20 +20,13 @@
 }
 
 .formContainer {
-    background-color: #242938;
-    border: 1px solid #2f3446;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
     border-radius: 8px;
     padding: 2rem;
-    max-width: 500px;
-    margin: 0 auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.formContainer:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(134, 70, 229, 0.2);
-    border-color: #8646e5;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 .formGroup {
@@ -40,6 +38,7 @@
     color: #ffffff;
     margin-bottom: 0.5rem;
     font-weight: 500;
+    font-size: 1.1rem;
 }
 
 /* Add this new class for the label text */
@@ -50,14 +49,13 @@
 
 .input {
     width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #2f3446;
+    padding: 0.8rem;
+    border: 1px solid #333;
     border-radius: 4px;
-    background-color: #1e222f;
+    background-color: #2a2a2a;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    transition: all 0.2s;
 }
 
 .input:focus {
@@ -69,20 +67,24 @@
 .input::placeholder {
     color: #6c757d;
 }
-   .button {
-    background-color: #22dd41;
-    color: white;
-    padding: 0.75rem 1.5rem;
+
+.button {
+    background-color: #00ffff;
+    color: black;
+    padding: 1rem 2rem;
     border: none;
     border-radius: 4px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .button:hover {
     background-color: #ff00ff;
 }
+
 .button:disabled {
     background-color: #4a4a4a;
     cursor: not-allowed;
