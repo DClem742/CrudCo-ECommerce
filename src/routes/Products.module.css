@@ -239,6 +239,8 @@
   font-weight: bold;
   width: 100%;
   margin-top: 1rem;
+  font-family: 'Metal Mania', cursive;
+  font-size: 1.8rem;
 }
 .addToCartBtn:hover {
   background-color: #ff69b4;

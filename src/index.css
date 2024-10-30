@@ -16,11 +16,14 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url('https://img.freepik.com/premium-photo/electric-frame-neon-light-background-blur-pink-cyan-blue-yellow-color-gradient-glowing-rectangle-dark-black-geometric-abstract-copy-space_1028938-453317.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   background-color: #000;
   color: #fff;
   min-height: 100vh;
 }
-
 #root {
   min-height: 100vh;
 }

@@ -2,6 +2,8 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  padding-top: 6rem;
+  font-family: Metal Mania; /* This will push the content below the navbar */
 }
 
 .title {
@@ -50,7 +52,6 @@
   padding-top: 1rem;
   border-top: 2px solid #333;
 }
-
 .clearCartButton {
   background-color: #00ffff;
   color: black;
@@ -59,10 +60,10 @@
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-family: 'Metal Mania', cursive;
+  font-size: 1.8rem;
   margin-top: 1rem;
 }
-
 .cartTotal {
   color: #ff1493;
   font-size: 1.5rem;
