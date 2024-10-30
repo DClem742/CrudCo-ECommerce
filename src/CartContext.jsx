@@ -7,32 +7,20 @@ const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product) => {
-    const existingItem = cartItems.find((item) => item.product.id === product.id);
+    const existingItem = cartItems.find((item) => item.product === product.id);
     
-    setCartItems(() => {
-      if (existingItem) {
-      return cartItems.map((item) => {
-        if (item.product === product.id) {
-          return {
-            ...item,
-            quantity: item.quantity + 1,
-          };
-        }
-        return item;
-      });
+    if (existingItem) {
+      setCartItems(
+        cartItems.map((item) =>
+          item.product === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCartItems([...cartItems, { product: product.id, quantity: 1 }]);
     }
-      else {
-        return [
-          ...cartItems, 
-          { 
-            product: product.id, 
-            quantity: 1 
-          },
-        ];
-      }
-    });
-  }; 
-
+  };
   const removeFromCart = () => {
     setCartItems([]);
   };

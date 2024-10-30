@@ -24,13 +24,16 @@
   text-decoration: none;
   transition: all 0.3s ease;
 }
+
 .nav a:hover {
+
   background-color: #00ffff;
   color: black;
   box-shadow: 0 0 15px #00ffff,
               0 0 30px #00ffff;
   transform: scale(1.05);
 }
+
 .nav a.active {
   background-color: #00ffff;
   color: black;
@@ -102,4 +105,13 @@
 
 .socialButton:hover {
   color: rgb(34, 221, 65); /* Matched the hover color with navLink */
+}
+.nav a[href="/cart"] {
+  background-color: transparent;
+  padding: 0;
+}
+
+.nav a[href="/cart"]:hover {
+  background-color: transparent;
+  box-shadow: none;
 }

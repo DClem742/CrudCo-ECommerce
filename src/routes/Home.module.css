@@ -3,16 +3,16 @@
   padding: 2rem;
   color: #fff;
 }
-
 .title {
   font-family: 'Metal Mania', cursive;
   font-size: 4rem;
+  color: #fff;
   text-shadow: 0 0 10px #ff1493, 
-               0 0 20px #ff1493, 
-               0 0 30px #ff1493;
+                0 0 20px #ff1493,
+                0 0 30px #00ffff,
+                0 0 40px #00ffff;
   margin-bottom: 2rem;
 }
-
 .intro {
   font-family: 'Metal Mania', cursive;
   font-size: 2rem;

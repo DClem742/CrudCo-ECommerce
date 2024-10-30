@@ -46,10 +46,11 @@ const MainNav = () => {
           </>
         )}
         <li>
-          <div className={styles.cartItems}>
-            <ShoppingBag />
-            <span className={styles.itemCount}>{cartItems.length}</span>
-          </div>
+          <NavLink to="/cart" className={styles.cartLink}>
+            <div className={styles.cartItems}>
+              <ShoppingBag />
+            </div>
+          </NavLink>
         </li>
       </ul>
     </nav>
