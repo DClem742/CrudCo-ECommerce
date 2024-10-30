@@ -114,13 +114,12 @@
               0 0 30px #ff1493;
   border-color: #ff1493;
 }
-
 .categoryContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  justify-items: center;
+  grid-template-columns: repeat(2, auto);
+  gap: 30px;
+  max-width: 600px;
+  margin: 180px auto 0;
+  padding: 20px;
+  justify-content: center;
 }
