@@ -24,12 +24,13 @@
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 .nav a:hover {
-  background-color: #ff69b4;
+  background-color: #00ffff;
+  color: black;
+  box-shadow: 0 0 15px #00ffff,
+              0 0 30px #00ffff;
   transform: scale(1.05);
 }
-
 .nav a.active {
   background-color: #00ffff;
   color: black;
