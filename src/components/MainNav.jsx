@@ -1,11 +1,10 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../AuthContext";
 import { useCart } from "../CartContext";
 import ShoppingBag from "./ShoppingCart";
 import CartNotifier from "./CartNotifier";
 
 import styles from "./Nav.module.css";
-
 
 const MainNav = () => {
   const { token, user, logout } = useAuth();
@@ -23,39 +22,43 @@ const MainNav = () => {
     <nav className={styles.nav}>
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <NavLink to="/products">Products</NavLink>
+          <Link to="/products">Products</Link>
         </li>
         <li>
-          <NavLink to="/categories">Categories</NavLink>
+          <Link to="/categories">Categories</Link>
         </li>
         {token && user ? (
-          <li>
-            <button onClick={handleLogout}>Logout</button>
-          </li>
+          <>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
+            </li>
+            <li>
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+          </>
         ) : (
           <>
             <li>
-              <NavLink to="/register">Register</NavLink>
+              <Link to="/register">Register</Link>
             </li>
             <li>
-              <NavLink to="/login">Login</NavLink>
+              <Link to="/login">Login</Link>
             </li>
           </>
         )}
         <li>
-          <NavLink to="/cart" className={styles.cartLink}>
+          <Link to="/cart" className={styles.cartLink}>
             <div className={styles.cartItems}>
               <ShoppingBag />
             </div>
-          </NavLink>
+          </Link>
         </li>
       </ul>
     </nav>
   );
 };
-   
 
 export default MainNav;
